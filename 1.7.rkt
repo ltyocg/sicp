@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 (define (square x) (* x x))
 (define (good-enough? guess x)
   (< (abs (- (square guess) x)) (/ x 1000)))

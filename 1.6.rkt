@@ -1,10 +1,10 @@
-#lang racket
+#lang sicp
 (define (new-if predicate then-clause else-clause)
   (cond (predicate then-clause)
         (else else-clause)))
-;5
+; 5
 (new-if (= 2 3) 0 5)
-;0
+; 0
 (new-if (= 1 1) 0 5)
 (define (square x) (* x x))
 (define (good-enough? guess x)
