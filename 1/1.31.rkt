@@ -6,7 +6,7 @@
        (term a)
        (product term (next a) next b))))
 (define (factorial n)
-  (product (lambda (x) x) 1 inc n))
+  (product identity 1 inc n))
 (define (pi scale)
   (* 4 (product
         (lambda (x)
