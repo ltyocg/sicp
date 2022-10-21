@@ -13,6 +13,7 @@
      (if (= 1 i)
          x
          (- (* x x))))
-   (lambda (i) (dec (* 2 x)))
+   (lambda (i) (dec (* 2 i)))
    k))
-(tan-cf 4 100)
+(tan-cf 4 16)
+(tan 4)

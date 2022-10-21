@@ -1,0 +1,28 @@
+#lang sicp
+(define (newtons-method g guess)
+  (define (fixed-point f first-guess)
+    (let ((tolerance 0.00001))
+      (define (try guess)
+        (let ((next (f guess)))
+          (if (< (abs (- guess next)) tolerance)
+              next
+              (try next))))
+      (try first-guess)))
+  (define (newton-transform g)
+    (define (deriv g)
+      (let ((dx 0.00001))
+        (lambda (x)
+          (/
+           (- (g (+ x dx)) (g x))
+           dx))))
+    (lambda (x)
+      (- x (/ (g x) ((deriv g) x)))))
+  (fixed-point (newton-transform g) guess))
+(define (cubic a b c)
+  (lambda (x)
+    (+
+     (expt x 3)
+     (* a (expt x 2))
+     (* b x)
+     c)))
+(newtons-method (cubic 1 2 3) 1)
