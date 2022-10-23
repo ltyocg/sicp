@@ -1,0 +1,17 @@
+#lang sicp
+(define (make-rectangle p0 p1 p2)
+  (cons p0 (cons p1 p2)))
+(define (edge r apply)
+  (let ((p0 (car r))
+        (p1 (car (cdr r)))
+        (p2 (cdr (cdr r))))
+    (define (width p1 p2)
+      (define (square x) (* x x))
+      (sqrt (+
+             (square (- (car p2) (car p1)))
+             (square (- (cdr p2) (cdr p1))))))
+    (apply (width p0 p1) (width p1 p2))))
+(define (perimeter r)
+  (edge r (lambda (a b) (* 2 (+ a b)))))
+(define (area r)
+  (edge r *))
