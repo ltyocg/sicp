@@ -7,5 +7,5 @@
          (dec index)
          (lambda (x) (f (p x))))))
   (iter n identity))
-; 625
 ((repeated (lambda (x) (* x x)) 2) 5)
+; 625

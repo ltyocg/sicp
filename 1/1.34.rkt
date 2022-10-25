@@ -1,7 +1,7 @@
 #lang sicp
 (define (f g) (g 2))
-; 4
 (f (lambda (x) (* x x)))
-; 6
+; 4
 (f (lambda (z) (* z (inc z))))
+; 6
 (f f)

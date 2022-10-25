@@ -9,9 +9,9 @@
       ((divides? test-divisor n) test-divisor)
       (else (find-divisor n (+ test-divisor 1)))))
   (find-divisor n 2))
-; 199
 (smallest-divisor 199)
-; 1999
+; 199
 (smallest-divisor 1999)
-; 7
+; 1999
 (smallest-divisor 19999)
+; 7
