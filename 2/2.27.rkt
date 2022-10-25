@@ -6,3 +6,4 @@
     (else
      (append (deep-reverse (cdr items))
              (list (deep-reverse (car items)))))))
+(deep-reverse '((1 2) (3 4)))
