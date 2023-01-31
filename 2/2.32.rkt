@@ -6,4 +6,4 @@
         (append
          rest
          (map (lambda (x) (cons (car s) x)) rest)))))
-(subsets '(1 2 3))
+(subsets (list 1 2 3))
