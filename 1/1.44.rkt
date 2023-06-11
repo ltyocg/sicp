@@ -1,6 +1,6 @@
 #lang sicp
 (define (smooth f)
-  (let ((dx 1e-5))
+  (let ([dx 1e-5])
     (lambda (x)
       (/
        (+ (f (- x dx)) (f x) (f (+ x dx)))

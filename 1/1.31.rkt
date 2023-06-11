@@ -10,7 +10,7 @@
 (define (pi scale)
   (* 4 (product
         (lambda (x)
-          (let ((n (inc (* 2 x))))
+          (let ([n (inc (* 2 x))])
             (/ (* (dec n) (inc n)) (* n n))))
         1
         inc

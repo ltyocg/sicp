@@ -3,6 +3,6 @@
 (define (halve x) (/ x 2))
 (define (* a b)
   (cond
-    ((= b 0) 0)
-    ((even? b) (double (* a (halve b))))
-    (else (+ a (* a (dec b))))))
+    [(= b 0) 0]
+    [(even? b) (double (* a (halve b)))]
+    [else (+ a (* a (dec b)))]))

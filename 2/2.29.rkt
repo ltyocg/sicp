@@ -7,7 +7,7 @@
 (define (branch-structure branch) (cadr branch))
 (define (branch-weight branch)
   (* (branch-length branch)
-     (let ((structure (branch-structure branch)))
+     (let ([structure (branch-structure branch)])
        (if (number? structure)
            structure
            (total-weight structure)))))

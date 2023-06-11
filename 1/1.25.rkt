@@ -4,9 +4,9 @@
     (define (square x) (* x x))
     (define (iter b n a)
       (cond
-        ((= n 0) a)
-        ((even? n) (iter (square b) (/ n 2) a))
-        (else (iter b (dec n) (* a b)))))
+        [(= n 0) a]
+        [(even? n) (iter (square b) (/ n 2) a)]
+        [else (iter b (dec n) (* a b))]))
     (iter b n 1))
   (define (expmod base exp m)
     (remainder (fast-expt base exp) m))
@@ -15,9 +15,9 @@
   (try-it (inc (random (dec n)))))
 (define (fast-prime? n times)
   (cond
-    ((= times 0) #t)
-    ((fermat-test n) (fast-prime? n (dec times)))
-    (else #f)))
+    [(= times 0) #t]
+    [(fermat-test n) (fast-prime? n (dec times))]
+    [else #f]))
 (define (timed-prime-test n)
   (newline)
   (display n)

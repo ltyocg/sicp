@@ -1,9 +1,9 @@
 #lang sicp
 (define (root x n)
   (define (fixed-point f first-guess)
-    (let ((tolerance 1e-5))
+    (let ([tolerance 1e-5])
       (define (try guess)
-        (let ((next (f guess)))
+        (let ([next (f guess)])
           (if (< (abs (- guess next)) tolerance)
               next
               (try next))))

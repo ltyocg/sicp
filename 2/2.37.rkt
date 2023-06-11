@@ -16,5 +16,5 @@
 (define (transpose m)
   (accumulate-n cons nil m))
 (define (matrix-*-matrix m n)
-  (let ((cols (transpose n)))
+  (let ([cols (transpose n)])
     (map (lambda (row) (matrix-*-vector cols row)) m)))

@@ -13,8 +13,8 @@
   (display ")")
   (newline))
 (define (midpoint-segment segment)
-  (let ((a (start-segment segment))
-        (b (end-segment segment)))
+  (let ([a (start-segment segment)]
+        [b (end-segment segment)])
     (make-point
      (/ (+ (x-point a) (x-point b)) 2)
      (/ (+ (y-point a) (y-point b)) 2))))

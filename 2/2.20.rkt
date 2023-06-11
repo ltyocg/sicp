@@ -3,7 +3,7 @@
   (define (iter l result)
     (if (null? l)
         result
-        (let ((first (car l)))
+        (let ([first (car l)])
           (iter
            (cdr l)
            (if (even? (+ n first))

@@ -6,11 +6,11 @@
       (= (remainder b a) 0))
     (define (find-divisor n test-divisor)
       (cond
-        ((> (square test-divisor) n) n)
-        ((divides? test-divisor n) test-divisor)
-        (else (find-divisor n (+
+        [(> (square test-divisor) n) n]
+        [(divides? test-divisor n) test-divisor]
+        [else (find-divisor n (+
                                test-divisor
-                               (if (> test-divisor 2) 2 1))))))
+                               (if (> test-divisor 2) 2 1)))]))
     (find-divisor n 2))
   (= n (smallest-divisor n)))
 (define (timed-prime-test n)

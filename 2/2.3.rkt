@@ -2,9 +2,9 @@
 (define (make-rectangle p0 p1 p2)
   (cons p0 (cons p1 p2)))
 (define (edge r apply)
-  (let ((p0 (car r))
-        (p1 (car (cdr r)))
-        (p2 (cdr (cdr r))))
+  (let ([p0 (car r)]
+        [p1 (cadr r)]
+        [p2 (caddr r)])
     (define (width p1 p2)
       (define (square x) (* x x))
       (sqrt (+
