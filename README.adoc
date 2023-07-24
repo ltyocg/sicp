@@ -2,3 +2,8 @@
 ----
 raco pkg install sicp
 ----
+[source,shell]
+----
+raco pkg install iracket
+raco iracket install
+----
