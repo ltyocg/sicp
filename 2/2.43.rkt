@@ -22,11 +22,11 @@
         (filter
          (lambda (positions) (safe? k positions))
          (flatmap
-          (lambda (rest-of-queens)
+          (lambda (new-row)
             (map
-             (lambda (new-row) (adjoin-position new-row k rest-of-queens))
-             (enumerate-interval 1 board-size)))
-          (queen-cols (dec k))))))
+             (lambda (rest-of-queens) (adjoin-position new-row k rest-of-queens))
+             (queen-cols (dec k))))
+          (enumerate-interval 1 board-size)))))
   (queen-cols board-size))
 (define empty-board '())
 (define (safe? k positions)
